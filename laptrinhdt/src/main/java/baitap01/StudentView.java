@@ -5,11 +5,12 @@
  */
 package baitap01;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
  *
- * @author Admin
+ * @author ADmin
  */
 public class StudentView {
 
@@ -37,4 +38,36 @@ public class StudentView {
         return sv;
     }
     
+    public ArrayList<Student> nhap_du_lieu_nhieu_sinh_vien(){
+        ArrayList<Student> result = new ArrayList<>();
+        boolean flag = true;
+        while(flag){
+            System.out.println("Ban co muon nhap du lieu khong? (y/n)");
+            Scanner sc = new Scanner(System.in);
+            String answer = sc.nextLine();
+            if ("n".equals(answer) || "N".equals(answer)){
+                flag = false;
+            }else{
+                Student sv = them_du_lieu_sinh_vien();
+                result.add(sv);
+            }
+        }
+        return result;
+    }
+    
+    public void hien_thi_danh_sach_sinh_vien(ArrayList<Student> students){
+        
+        System.out.println("++++++++++++++++++++++++++++++++++");
+        for(Student sv: students){
+            System.out.println("++++ " + sv.toString() + " ++++");
+        }    
+        System.out.println("++++++++++++++++++++++++++++++++++");
+    }
+    
+    //Tra ve so thu tu dau tien cua sv trong mang tim kiem dc
+    public int tim_sv_theo_sdt(ArrayList<Student> students){
+        int result = -1; //khong tim thay
+        
+        return result;
+    }
 }
